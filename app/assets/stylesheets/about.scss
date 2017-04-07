@@ -17,12 +17,13 @@
     margin-bottom: 20px;
     color: $color4;
     padding: 20px 0;
+    text-align: center;
 
     img {
       margin-bottom: -5px;
       margin-right: 5px;
-      width: 46px;
-      height: 46px;
+      //width: 46px;
+      //height: 46px;
     }
   }
 
@@ -316,6 +317,7 @@
 .screenshot-with-signup {
   display: flex;
   margin-bottom: 20px;
+  justify-content: center;
 
   .mascot {
     flex: 1 1 auto;

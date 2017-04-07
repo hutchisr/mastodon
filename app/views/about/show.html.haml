@@ -16,13 +16,14 @@
 
 .wrapper
   %h1
-    = image_tag 'logo.png'
-    Mastodon
+    -#= image_tag 'logo.png'
+    -#Mastodon
+    = image_tag 'homunyan.gif'
 
   %p= t('about.about_mastodon').html_safe
 
   .screenshot-with-signup
-    .mascot= image_tag 'fluffy-elephant-friend.png'
+    -#.mascot= image_tag 'fluffy-elephant-friend.png'
 
     - if @instance_presenter.open_registrations
       = render 'registration'
