@@ -800,6 +800,7 @@ a.status__content__spoiler-link {
 
 .column {
   width: 330px;
+  flex: 1;
   position: relative;
   box-sizing: border-box;
   display: flex;
@@ -947,6 +948,37 @@ a.status__content__spoiler-link {
       background: lighten($color1, 3%);
       transition: all 200ms ease-out;
     }
+  }
+}
+
+.column, .drawer {
+  margin: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  overflow: hidden;
+}
+
+.column:first-child, .drawer:first-child {
+  margin-left: 10px;
+}
+
+.column:last-child, .drawer:last-child {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .column, .drawer {
+    width: 100%;
+    margin: 0;
+    flex: 1 1 100%;
+  }
+
+  .columns-area {
+    flex-direction: column;
+  }
+
+  .search__input, .autosuggest-textarea__textarea {
+    font-size: 16px;
   }
 }
 
