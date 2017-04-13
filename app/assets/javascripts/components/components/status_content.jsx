@@ -91,7 +91,7 @@ const StatusContent = React.createClass({
     const { status } = this.props;
     const { hidden } = this.state;
 
-    const content = { __html: emojify(status.get('content').replace(/<p>/g, '').replace(/<\/p>/g, '<br />').replace(/\s{2}/g, ' &nbsp;')) };
+    const content = { __html: emojify(status.get('content').replace(/\s*(<p>|<\/p>)\s*/g, '$1').replace(/\s{2}/g, ' &nbsp;')) };
     const spoilerContent = { __html: emojify(escapeTextContentForBrowser(status.get('spoiler_text', ''))) };
     const directionStyle = { direction: 'ltr' };
 
