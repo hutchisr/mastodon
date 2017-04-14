@@ -75,7 +75,7 @@ const en = {
   "notifications.column_settings.favourite": "Favourites:",
   "notifications.column_settings.follow": "New followers:",
   "notifications.column_settings.mention": "Mentions:",
-  "notifications.column_settings.reblog": "reposts:",
+  "notifications.column_settings.reblog": "Reposts:",
 };
 
 export default en;
