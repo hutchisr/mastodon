@@ -1469,9 +1469,9 @@ button.icon-button.active i.fa-retweet {
 }
 
 .emoji-dialog {
-  width: 280px;
-  height: 220px;
-  background: darken($color3, 10%);
+  width: 245px;
+  height: 270px;
+  background: $color5;
   box-sizing: border-box;
   border-radius: 4px;
   overflow: hidden;
