@@ -3,6 +3,8 @@
 source 'https://rubygems.org'
 ruby '2.4.1'
 
+gem 'pkg-config'
+
 gem 'rails', '~> 5.0.2'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -50,6 +52,7 @@ gem 'sidekiq'
 gem 'sidekiq-unique-jobs'
 gem 'simple-navigation'
 gem 'simple_form'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'statsd-instrument'
 gem 'twitter-text'
 gem 'tzinfo-data'
@@ -57,6 +60,7 @@ gem 'tzinfo-data'
 gem 'react-rails'
 gem 'browserify-rails'
 gem 'autoprefixer-rails'
+gem 'exception_notification'
 
 group :development, :test do
   gem 'rspec-rails'

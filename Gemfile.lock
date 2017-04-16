@@ -145,6 +145,9 @@ GEM
       thread_safe
     encryptor (3.0.0)
     erubis (2.7.0)
+    exception_notification (4.2.1)
+      actionmailer (>= 4.0, < 6)
+      activesupport (>= 4.0, < 6)
     execjs (2.7.0)
     fabrication (2.16.1)
     faker (1.7.3)
@@ -266,6 +269,7 @@ GEM
     pg (0.20.0)
     pghero (1.6.4)
       activerecord
+    pkg-config (1.1.7)
     powerpack (0.1.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -469,6 +473,7 @@ DEPENDENCIES
   devise-two-factor
   doorkeeper
   dotenv-rails
+  exception_notification
   fabrication
   faker
   fast_blank
@@ -496,6 +501,7 @@ DEPENDENCIES
   paperclip-av-transcoder
   pg
   pghero
+  pkg-config
   pry-rails
   puma
   rabl
@@ -520,6 +526,7 @@ DEPENDENCIES
   simple-navigation
   simple_form
   simplecov
+  sprockets-rails
   statsd-instrument
   twitter-text
   tzinfo-data

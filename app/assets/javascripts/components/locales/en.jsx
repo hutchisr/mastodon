@@ -56,6 +56,7 @@ const en = {
   "compose_form.placeholder": "What is on your mind?",
   "compose_form.publish": "Post",
   "compose_form.sensitive": "Mark media as sensitive",
+  "compose_form.sensitive_message": "Please be sure to mark NSFW if the image you are trying to post is erotic content",
   "compose_form.spoiler_placeholder": "Content warning",
   "compose_form.spoiler": "Hide text behind warning",
   "compose_form.private": "Mark as private",

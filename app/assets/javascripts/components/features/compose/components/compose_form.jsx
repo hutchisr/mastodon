@@ -12,6 +12,7 @@ import Collapsable from '../../../components/collapsable';
 import SpoilerButtonContainer from '../containers/spoiler_button_container';
 import PrivacyDropdownContainer from '../containers/privacy_dropdown_container';
 import SensitiveButtonContainer from '../containers/sensitive_button_container';
+import SensitiveGuideContainer from '../containers/sensitive_guide_container';
 import EmojiPickerDropdown from './emoji_picker_dropdown';
 import UploadFormContainer from '../containers/upload_form_container';
 import TextIconButton from './text_icon_button';
@@ -92,7 +93,7 @@ const ComposeForm = React.createClass({
   },
 
   componentDidUpdate (prevProps) {
-    // This statement does several things: 
+    // This statement does several things:
     // - If we're beginning a reply, and,
     //     - Replying to zero or one users, places the cursor at the end of the textbox.
     //     - Replying to more than one user, selects any usernames past the first;
@@ -201,6 +202,8 @@ const ComposeForm = React.createClass({
             <div style={{ paddingTop: '10px' }}><Button text={publishText} onClick={this.handleSubmit} disabled={disabled} /></div>
           </div>
         </div>
+
+        <SensitiveGuideContainer />
       </div>
     );
   }

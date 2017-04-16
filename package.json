@@ -3,7 +3,14 @@
   "scripts": {
     "test": "mocha --require ./spec/javascript/setup.js --compilers js:babel-register ./spec/javascript/components/*.test.jsx",
     "storybook": "start-storybook -p 9001 -c storybook",
-    "start": "babel-node ./streaming/index.js --presets es2015,stage-2"
+    "build": "rm -rf ./streaming/build.js && babel ./streaming/index.js > ./streaming/build.js",
+    "start": "npm run build && node streaming/build.js"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
   },
   "dependencies": {
     "@kadira/storybook": "^2.35.3",
