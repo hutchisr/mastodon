@@ -1,7 +1,5 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import Perf from 'react-addons-perf';
-import Mastodon from '../assets/javascripts/components/containers/mastodon';
+import Mastodon from '../javascripts/components/containers/mastodon';
 
 if (!window.Intl) {
   require('intl');
