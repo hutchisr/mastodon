@@ -3,7 +3,7 @@ config: config/webpack
 entry: webpack
 output: public
 node_modules: node_modules
-source: app/assets/javascripts
+source: app
 extensions:
   - .coffee
   - .js
