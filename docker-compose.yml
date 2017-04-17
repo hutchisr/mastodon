@@ -28,6 +28,7 @@ services:
     volumes:
       - ./public/assets:/mastodon/public/assets
       - ./public/system:/mastodon/public/system
+      - ./public/system:/mastodon/public/webpack
 
   streaming:
     restart: always

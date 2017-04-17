@@ -36,4 +36,4 @@ RUN BUILD_DEPS=" \
 
 COPY . /mastodon
 
-VOLUME /mastodon/public/system /mastodon/public/assets
+VOLUME /mastodon/public/system /mastodon/public/assets /mastodon/public/webpack
