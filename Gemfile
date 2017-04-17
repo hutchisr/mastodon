@@ -58,7 +58,8 @@ gem 'twitter-text'
 gem 'tzinfo-data'
 
 gem 'react-rails'
-gem 'browserify-rails'
+# gem 'browserify-rails'
+gem 'webpacker'
 gem 'autoprefixer-rails'
 gem 'exception_notification'
 

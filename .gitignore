@@ -36,3 +36,6 @@ config/deploy/*
 
 # Ignore IDE files
 .vscode/
+/public/packs
+/public/webpack
+/node_modules
