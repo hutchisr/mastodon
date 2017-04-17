@@ -11,7 +11,8 @@ module.exports = merge(sharedConfig, {
   devtool: 'source-map',
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true
+      sourceMap: true,
+      mangle: false,
     }),
     new CompressionPlugin({
       asset: '[path].gz[query]',
