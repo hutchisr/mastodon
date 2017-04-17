@@ -2,6 +2,7 @@ import api, { getLinks } from '../api'
 import Immutable from 'immutable';
 import IntlMessageFormat from 'intl-messageformat';
 import striptags from 'striptags';
+import he from 'he';
 
 import { fetchRelationships } from './accounts';
 
@@ -46,7 +47,7 @@ export function updateNotifications(notification, intlMessages, intlLocale) {
       const title = new IntlMessageFormat(intlMessages[`notification.${notification.type}`], intlLocale).format({ name: notification.account.display_name.length > 0 ? notification.account.display_name : notification.account.username });
       let body = '';
       if (notification.status) {
-        body = striptags(notification.status.spoiler_text.length > 0 ? notification.status.spoiler_text : notification.status.content);
+        body = he.decode(striptags(notification.status.spoiler_text.length > 0 ? notification.status.spoiler_text : notification.status.content));
       }
 
       new Notification(title, { body, icon: notification.account.avatar, tag: notification.id });
