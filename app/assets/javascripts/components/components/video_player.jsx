@@ -137,7 +137,7 @@ const VideoPlayer = React.createClass({
   },
 
   handleLoadedData () {
-    if (('WebkitAppearance' in document.documentElement.style && this.video.audioTracks.length === 0) || this.video.mozHasAudio === false) {
+    if (('WebkitAppearance' in document.documentElement.style && !this.video.audioTracks) || this.video.mozHasAudio === false) {
       this.setState({ hasAudio: false });
     }
   },
