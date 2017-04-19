@@ -73,6 +73,10 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    browserify-rails (4.1.0)
+      addressable (>= 2.4.0)
+      railties (>= 4.0.0, < 5.1)
+      sprockets (>= 3.6.0)
     builder (3.2.3)
     bullet (5.5.1)
       activesupport (>= 3.0.0)
@@ -141,9 +145,6 @@ GEM
       thread_safe
     encryptor (3.0.0)
     erubis (2.7.0)
-    exception_notification (4.2.1)
-      actionmailer (>= 4.0, < 6)
-      activesupport (>= 4.0, < 6)
     execjs (2.7.0)
     fabrication (2.16.1)
     faker (1.7.3)
@@ -474,6 +475,7 @@ DEPENDENCIES
   best_in_place (~> 3.0.1)
   better_errors
   binding_of_caller
+  browserify-rails
   bullet
   capistrano (= 3.8.0)
   capistrano-faster-assets (~> 1.0)
@@ -485,7 +487,6 @@ DEPENDENCIES
   devise-two-factor
   doorkeeper
   dotenv-rails
-  exception_notification
   fabrication
   faker
   fast_blank

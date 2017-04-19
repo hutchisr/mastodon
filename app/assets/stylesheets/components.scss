@@ -40,6 +40,15 @@
   }
 }
 
+[role=button] {
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
+  }
+}
+
 .column-icon {
   color: $color3;
   background: lighten($color1, 4%);
