@@ -9,6 +9,7 @@ const Button = React.createClass({
     block: React.PropTypes.bool,
     secondary: React.PropTypes.bool,
     size: React.PropTypes.number,
+    style: React.PropTypes.object,
     children: React.PropTypes.node
   },
 
@@ -44,7 +45,9 @@ const Button = React.createClass({
       lineHeight: `${this.props.size}px`,
       borderRadius: '4px',
       textDecoration: 'none',
-      whiteSpace: 'nowrap'
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
+      overflow: 'hidden'
     };
 
     return (

@@ -6,10 +6,8 @@
 
 .envrc
 streaming/build.js
-
-# Ignore bundler config.
 /.bundle
-/vendor
+/vendor/bundle
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -33,9 +31,18 @@ neo4j/
 # Ignore Capistrano customizations
 config/deploy/*
 
-
 # Ignore IDE files
 .vscode/
 
 /public/packs
 /public/webpack
+# Ignore postgres + redis volume optionally created by docker-compose
+postgres
+redis
+
+# Ignore Apple files
+.DS_Store
+
+# Ignore vim files
+*~
+*.swp

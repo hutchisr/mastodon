@@ -1,3 +1,4 @@
+import os from 'os';
 import cluster from 'cluster';
 import dotenv from 'dotenv'
 import express from 'express'
@@ -9,25 +10,28 @@ import url from 'url'
 import WebSocket from 'ws'
 import uuid from 'uuid'
 
-// cluster.schedulingPolicy = cluster.SCHED_RR;
+const env = process.env.NODE_ENV || 'development'
+
+dotenv.config({
+  path: env === 'production' ? '.env.production' : '.env'
+})
 
 if (cluster.isMaster) {
+  // cluster master
+
+  const core = +process.env.STREAMING_CLUSTER_NUM || (env === 'development' ? 1 : (os.cpus().length > 1 ? os.cpus().length - 1 : 1))
   const fork = () => {
     const worker = cluster.fork();
     worker.on('exit', (code, signal) => {
-      console.error(`worker dead ${code} ${signal}`);
-      fork();
+      log.error(`Worker died with exit code ${code}, signal ${signal} received.`);
+      setTimeout(() => fork(), 0);
     });
   };
-  for (const i of [0, 1, 2, 3]) {
-    fork();
-  }
-} else {
-  const env = process.env.NODE_ENV || 'development'
+  for (let i = 0; i < core; i++) fork();
+  log.info(`Starting streaming API server master with ${core} workers`)
 
-  dotenv.config({
-    path: env === 'production' ? '.env.production' : '.env'
-  })
+} else {
+  // cluster worker
 
   const pgConfigs = {
     development: {
@@ -45,7 +49,7 @@ if (cluster.isMaster) {
       database: process.env.DB_NAME || 'mastodon_production',
       host:     process.env.DB_HOST || 'localhost',
       port:     process.env.DB_PORT || 5432,
-      max:      50
+      max:      10
     }
   }
 
@@ -304,29 +308,29 @@ if (cluster.isMaster) {
       }
 
       switch(location.query.stream) {
-        case 'user':
-          streamFrom(`timeline:${req.accountId}`, req, streamToWs(req, ws), streamWsEnd(ws))
-          break;
-        case 'public':
-          streamFrom('timeline:public', req, streamToWs(req, ws), streamWsEnd(ws), true)
-          break;
-        case 'public:local':
-          streamFrom('timeline:public:local', req, streamToWs(req, ws), streamWsEnd(ws), true)
-          break;
-        case 'hashtag':
-          streamFrom(`timeline:hashtag:${location.query.tag}`, req, streamToWs(req, ws), streamWsEnd(ws), true)
-          break;
-        case 'hashtag:local':
-          streamFrom(`timeline:hashtag:${location.query.tag}:local`, req, streamToWs(req, ws), streamWsEnd(ws), true)
-          break;
-        default:
-          ws.close()
+      case 'user':
+        streamFrom(`timeline:${req.accountId}`, req, streamToWs(req, ws), streamWsEnd(ws))
+        break;
+      case 'public':
+        streamFrom('timeline:public', req, streamToWs(req, ws), streamWsEnd(ws), true)
+        break;
+      case 'public:local':
+        streamFrom('timeline:public:local', req, streamToWs(req, ws), streamWsEnd(ws), true)
+        break;
+      case 'hashtag':
+        streamFrom(`timeline:hashtag:${location.query.tag}`, req, streamToWs(req, ws), streamWsEnd(ws), true)
+        break;
+      case 'hashtag:local':
+        streamFrom(`timeline:hashtag:${location.query.tag}:local`, req, streamToWs(req, ws), streamWsEnd(ws), true)
+        break;
+      default:
+        ws.close()
       }
     })
   })
 
   server.listen(process.env.PORT || 4000, () => {
     log.level = process.env.LOG_LEVEL || 'verbose'
-    log.info(`Starting streaming API server on port ${server.address().port}`)
+    log.info(`Starting streaming API server worker on port ${server.address().port}`)
   })
 }
