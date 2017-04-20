@@ -1,6 +1,5 @@
 version: '2'
 services:
-
   db:
     restart: always
     image: postgres:alpine
@@ -27,9 +26,7 @@ services:
       - db
       - redis
     volumes:
-      - ./public/assets:/mastodon/public/assets
-      - ./public/system:/mastodon/public/system
-      - ./public/system:/mastodon/public/webpack
+      - ./public:/mastodon/public
 
   streaming:
     restart: always
@@ -53,4 +50,4 @@ services:
       - db
       - redis
     volumes:
-      - ./public/system:/mastodon/public/system
+      - ./public:/mastodon/public

@@ -1,7 +1,7 @@
 FROM ruby:2.4.1-alpine
 
-LABEL maintainer="https://github.com/tootsuite/mastodon" \
-      description="A GNU Social-compatible microblogging server"
+LABEL maintainer="https://github.com/rainyday/mastodon" \
+      description="An actually GNU Social-compatible microblogging server"
 
 ENV RAILS_ENV=production \
     NODE_ENV=production
@@ -12,23 +12,23 @@ WORKDIR /mastodon
 
 COPY Gemfile Gemfile.lock package.json yarn.lock /mastodon/
 
-RUN echo "@edge https://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
- && BUILD_DEPS=" \
+RUN BUILD_DEPS=" \
     postgresql-dev \
     libxml2-dev \
     libxslt-dev \
+    python \
     build-base" \
+ && echo -e '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
  && apk -U upgrade && apk add \
     $BUILD_DEPS \
-    nodejs@edge \
-    nodejs-npm@edge \
+    nodejs \
+    yarn@edge \
     libpq \
     libxml2 \
     libxslt \
     ffmpeg \
     file \
     imagemagick@edge \
- && npm install -g npm@3 && npm install -g yarn \
  && bundle install --deployment --without test development \
  && yarn --ignore-optional \
  && yarn cache clean \
@@ -38,4 +38,4 @@ RUN echo "@edge https://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/reposit
 
 COPY . /mastodon
 
-VOLUME /mastodon/public/system /mastodon/public/assets /mastodon/public/webpack
+VOLUME /mastodon/public
