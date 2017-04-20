@@ -59,7 +59,6 @@ gem 'tzinfo-data'
 gem 'whatlanguage'
 
 gem 'react-rails'
-gem 'browserify-rails'
 gem 'webpacker'
 gem 'autoprefixer-rails'
 
