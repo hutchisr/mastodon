@@ -36,8 +36,9 @@ install:
 
 before_script:
   - bundle exec rails db:create db:migrate
+  - bundle exec rails webpacker:compile
 
 script:
   - bundle exec rspec
-  - npm test
+  - yarn run test
   - i18n-tasks unused

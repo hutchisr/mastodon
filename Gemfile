@@ -94,6 +94,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-yarn'
   gem 'capistrano-faster-assets', '~> 1.0'
+  gem 'foreman'
 end
 
 group :production do
