@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom';
 import Mastodon from '../javascripts/components/containers/mastodon';
+import 'jquery-ujs';
 
 if (!window.Intl) {
   require('intl');
