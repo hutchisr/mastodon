@@ -14,9 +14,8 @@ class Formatter
     html = html.gsub(/  /, " \u00a0")
     return reformat(html) unless status.local?
 
-    html = encode(html)
     html = html.gsub(/(?:\n\r?|\r\n?)/, '<br />')
-    html = link_urls(html)
+    html = encode_and_link_urls(html)
     html = link_mentions(html, status.mentions)
     html = link_hashtags(html)
 

@@ -86,14 +86,14 @@ RSpec.describe Formatter do
     context 'contains html (script tag)' do
         let(:local_text) { '<script>alert("Hello")</script>' }
         it 'has valid url' do
-            expect(subject).to match '<p>&lt;script&gt;alert(&quot;Hello&quot;)&lt;/script&gt;</p>'
+            expect(subject).to match '&lt;script&gt;alert(&quot;Hello&quot;)&lt;/script&gt;'
         end
     end
 
     context 'contains html (xss attack)' do
       let(:local_text) { %q{<img src="javascript:alert('XSS');">} }
       it 'has valid url' do
-        expect(subject).to match '<p>&lt;img src=&quot;javascript:alert(&apos;XSS&apos;);&quot;&gt;</p>'
+        expect(subject).to match '&lt;img src=&quot;javascript:alert(&apos;XSS&apos;);&quot;&gt;'
       end
     end
   end
