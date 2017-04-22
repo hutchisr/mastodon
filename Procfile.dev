@@ -1,3 +1,3 @@
-web: bundle exec rails s Puma
+web: PORT=3000 bundle exec rails s Puma
 hot: ./bin/webpack-dev-server
-streaming: npm run start
+streaming: PORT=4000 npm run start

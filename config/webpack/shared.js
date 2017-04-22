@@ -47,5 +47,11 @@ module.exports = {
 
   resolveLoader: {
     modules: [paths.node_modules]
+  },
+
+  externals: {
+    jquery: 'jQuery',
+    react: 'React',
+    'react-dom': 'ReactDOM'
   }
 }
