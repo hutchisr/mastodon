@@ -7,7 +7,7 @@ class AtomSerializer
     def render(element)
       document = Ox::Document.new(version: '1.0', encoding: 'utf-8')
       document << element
-      Ox.dump(document, with_xml: true, indent: -1)
+      Ox.dump(document, with_xml: true)
     end
   end
 
