@@ -1,18 +1,15 @@
 version: '3'
 services:
-
   db:
     restart: always
     image: postgres:9.6-alpine
     volumes:
       - /var/local/mastodon/postgres:/var/lib/postgresql/data
-
   redis:
     restart: always
     image: redis:4.0-alpine
     volumes:
       - /var/local/mastodon/redis:/data
-
   web:
     build: .
     image: gargron/mastodon
@@ -25,10 +22,9 @@ services:
       - db
       - redis
     volumes:
-      - ./public/assets:/mastodon/public/assets
-      - ./public/packs:/mastodon/public/packs
-      - ./public/system:/mastodon/public/system
-
+      - assets:/mastodon/public/assets
+      - packs:/mastodon/public/packs
+      - system:/mastodon/public/system
   streaming:
     build: .
     image: gargron/mastodon
@@ -40,7 +36,6 @@ services:
     depends_on:
       - db
       - redis
-
   sidekiq:
     build: .
     image: gargron/mastodon
@@ -52,3 +47,7 @@ services:
       - redis
     volumes:
       - ./public/system:/mastodon/public/system
+volumes:
+  assets:
+  packs:
+  system:
