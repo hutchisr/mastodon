@@ -56,9 +56,10 @@ services:
     volumes:
       - /etc/nginx/:/etc/nginx/:ro
       - /etc/letsencrypt/:/etc/letsencrypt/:ro
-      - assets:/home/rachel/mastodon/public/assets/:ro
-      - packs:/home/rachel/mastodon/public/packs/:ro
-      - system:/home/rachel/mastodon/public/system:ro
+      - ./public:/web/public/:ro
+      - assets:/web/assets/:ro
+      - packs:/web/packs/:ro
+      - system:/web/system/:ro
 volumes:
   assets:
   packs:
