@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 services:
   db:
     restart: always
@@ -16,8 +16,8 @@ services:
     restart: always
     env_file: .env.production
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
-    ports:
-      - "3000:3000"
+    expose:
+      - 3000
     depends_on:
       - db
       - redis
@@ -31,8 +31,8 @@ services:
     restart: always
     env_file: .env.production
     command: npm run start
-    ports:
-      - "4000:4000"
+    expose:
+      - 4000
     depends_on:
       - db
       - redis
@@ -60,6 +60,14 @@ services:
       - assets:/web/assets/:ro
       - packs:/web/packs/:ro
       - system:/web/system/:ro
+  netdata:
+    image: firehol/netdata
+    restart: always
+    expose:
+      - 19999
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
 volumes:
   assets:
   packs:
