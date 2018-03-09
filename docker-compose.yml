@@ -47,6 +47,7 @@ services:
       - redis
     volumes:
       - system:/mastodon/public/system
+      - packs:/mastodon/public/packs
   nginx:
     restart: always
     image: nginx:mainline
