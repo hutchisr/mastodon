@@ -74,6 +74,7 @@ RUN bundle config build.nokogiri --with-iconv-lib=/usr/local/lib --with-iconv-in
 
 RUN groupadd -g ${GID} mastodon && useradd -d /mastodon -s /bin/sh -g mastodon -u ${UID} mastodon \
  && mkdir -p /mastodon/public/system /mastodon/public/assets /mastodon/public/packs \
+ && chown mastodon:mastodon /mastodon \
  && chown -R mastodon:mastodon /mastodon/public
 
 COPY --chown=mastodon:mastodon . /mastodon
