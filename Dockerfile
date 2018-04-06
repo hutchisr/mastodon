@@ -1,6 +1,6 @@
-FROM ruby:2.4.3-alpine3.6
+FROM homulilly/ruby:2.5.1
 
-LABEL maintainer="https://github.com/tootsuite/mastodon" \
+LABEL maintainer="https://github.com/rainyday/mastodon" \
       description="Your self-hosted, globally interconnected microblogging community"
 
 ARG UID=991
@@ -18,31 +18,29 @@ EXPOSE 3000 4000
 
 WORKDIR /mastodon
 
-RUN apk -U upgrade \
- && apk add -t build-dependencies \
-    build-base \
-    icu-dev \
-    libidn-dev \
-    libressl \
-    libtool \
-    postgresql-dev \
-    protobuf-dev \
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+    build-essential \
+    wget \
+    libicu-dev \
+    libidn11-dev \
+    libssl-dev \
+    libgmp3-dev \
+    libtool-bin \
+    libpq-dev \
+    libprotobuf-dev \
+    protobuf-compiler \
     python \
- && apk add \
     ca-certificates \
     ffmpeg \
     file \
     git \
-    icu-libs \
     imagemagick \
-    libidn \
-    libpq \
-    nodejs \
-    nodejs-npm \
-    protobuf \
-    tini \
-    jemalloc \
     tzdata \
+    gnupg \
+ && wget -O - https://deb.nodesource.com/setup_8.x | bash - \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends nodejs \
  && update-ca-certificates \
  && mkdir -p /tmp/src /opt \
  && wget -O yarn.tar.gz "https://github.com/yarnpkg/yarn/releases/download/v$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" \
@@ -61,7 +59,11 @@ RUN apk -U upgrade \
  && make install \
  && libtool --finish /usr/local/lib \
  && cd /mastodon \
- && rm -rf /tmp/* /var/cache/apk/*
+ && rm -rf /tmp/* /var/lib/apt/lists/*
+
+ENV TINI_VERSION v0.17.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /sbin/tini
+RUN chmod +x /sbin/tini
 
 COPY Gemfile Gemfile.lock package.json yarn.lock .yarnclean /mastodon/
 
@@ -70,7 +72,7 @@ RUN bundle config build.nokogiri --with-iconv-lib=/usr/local/lib --with-iconv-in
  && yarn --pure-lockfile \
  && yarn cache clean
 
-RUN addgroup -g ${GID} mastodon && adduser -h /mastodon -s /bin/sh -D -G mastodon -u ${UID} mastodon \
+RUN groupadd -g ${GID} mastodon && useradd -d /mastodon -s /bin/sh -g mastodon -u ${UID} mastodon \
  && mkdir -p /mastodon/public/system /mastodon/public/assets /mastodon/public/packs \
  && chown -R mastodon:mastodon /mastodon/public
 
