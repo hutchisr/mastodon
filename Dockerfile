@@ -74,9 +74,7 @@ RUN addgroup -g ${GID} mastodon && adduser -h /mastodon -s /bin/sh -D -G mastodo
  && mkdir -p /mastodon/public/system /mastodon/public/assets /mastodon/public/packs \
  && chown -R mastodon:mastodon /mastodon/public
 
-COPY . /mastodon
-
-RUN chown -R mastodon:mastodon /mastodon
+COPY --chown=mastodon:mastodon . /mastodon
 
 VOLUME /mastodon/public/system /mastodon/public/assets /mastodon/public/packs
 
