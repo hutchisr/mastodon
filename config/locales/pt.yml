@@ -613,7 +613,7 @@ pt:
       unlisted_long: Todos podem ver, porém não será postado nas timelines públicas
   stream_entries:
     click_to_show: Clique pra mostrar
-    pinned: Toot fixado
+    pinned: Post fixado
     reblogged: boosted
     sensitive_content: Conteúdo sensível
   terms:

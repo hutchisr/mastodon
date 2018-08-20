@@ -44,8 +44,8 @@ sv:
     nothing_here: Det finns inget här!
     people_followed_by: Personer som %{name} följer
     people_who_follow: Personer som följer %{name}
-    posts: Toots
-    posts_with_replies: Toots med svar
+    posts: Posts
+    posts_with_replies: Posts med svar
     remote_follow: Avlägsen följare
     reserved_username: Användarnamnet är reserverat
     roles:

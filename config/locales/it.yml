@@ -45,7 +45,7 @@ it:
     people_followed_by: Persone seguite da %{name}
     people_who_follow: Persone che seguono %{name}
     posts: Posts
-    posts_with_replies: Toot e risposte
+    posts_with_replies: Post e risposte
     remote_follow: Segui da remoto
     reserved_username: Il nome utente è riservato
     roles:
@@ -604,7 +604,7 @@ it:
       unlisted_long: Tutti lo possono vedere, ma non compare nelle timeline pubbliche
   stream_entries:
     click_to_show: Clicca per mostrare
-    pinned: Toot fissato in cima
+    pinned: Post fissato in cima
     reblogged: condiviso
     sensitive_content: Materiale sensibile
   terms:

@@ -43,8 +43,8 @@ es:
     nothing_here: "¡No hay nada aquí!"
     people_followed_by: Usuarios a quien %{name} sigue
     people_who_follow: Usuarios que siguen a %{name}
-    posts: Toots
-    posts_with_replies: Toots con respuestas
+    posts: Posts
+    posts_with_replies: Posts con respuestas
     remote_follow: Seguir
     reserved_username: El nombre de usuario está reservado
     roles:
@@ -689,7 +689,7 @@ es:
       unlisted_long: Todos pueden ver, pero no está listado en las líneas de tiempo públicas
   stream_entries:
     click_to_show: Click para mostrar
-    pinned: Toot fijado
+    pinned: Post fijado
     reblogged: retooteado
     sensitive_content: Contenido sensible
   terms:

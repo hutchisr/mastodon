@@ -44,8 +44,8 @@ nl:
     nothing_here: Hier is niets!
     people_followed_by: Mensen die %{name} volgen
     people_who_follow: Mensen die %{name} volgen
-    posts: Toots
-    posts_with_replies: Toots en reacties
+    posts: Posts
+    posts_with_replies: Posts en reacties
     remote_follow: Extern volgen
     reserved_username: Deze gebruikersnaam is gereserveerd
     roles:
@@ -137,11 +137,11 @@ nl:
       search: Zoeken
       shared_inbox_url: Gedeelde inbox-URL
       show:
-        created_reports: Toots door dit account gerapporteerd
+        created_reports: Posts door dit account gerapporteerd
         report: gerapporteerd
-        targeted_reports: Toots van dit account gerapporteerd
+        targeted_reports: Posts van dit account gerapporteerd
       silence: Negeren
-      statuses: Toots
+      statuses: Posts
       subscribe: Abonneren
       title: Accounts
       unconfirmed_email: Onbevestigd e-mailadres
@@ -161,7 +161,7 @@ nl:
         demote_user: Gebruiker %{target} is door %{name} gedegradeerd
         destroy_domain_block: Domein %{target} is door %{name} gedeblokkeerd
         destroy_email_domain_block: E-maildomein %{target} is door %{name} op de witte lijst geplaatst
-        destroy_status: Toot van %{target} is door %{name} verwijderd
+        destroy_status: Post van %{target} is door %{name} verwijderd
         disable_2fa_user: Vereisten tweestapsverificatie van %{target} zijn door %{name} uitgeschakeld
         disable_custom_emoji: Emoji %{target} is door %{name} uitgeschakeld
         disable_user: Aanmelden voor %{target} is door %{name} uitgeschakeld
@@ -292,7 +292,7 @@ nl:
       resolved: Opgelost
       resolved_msg: Gerapporteerde toot succesvol opgelost!
       silence_account: Account negeren
-      status: Toot
+      status: Post
       suspend_account: Account opschorten
       target: Gerapporteerde account
       title: Gerapporteerde toots
@@ -365,7 +365,7 @@ nl:
       media:
         title: Media
       no_media: Geen media
-      title: Toots van account
+      title: Posts van account
       with_media: Met media
     subscriptions:
       callback_url: Callback-URL
@@ -495,7 +495,7 @@ nl:
       title: Nieuwe filter toevoegen
   followers:
     domain: Domein
-    explanation_html: Wanneer je de privacy van jouw toots wilt garanderen, moet je goed weten wie jouw volgers zijn. <strong>Toots die alleen aan jouw volgers zijn gericht, worden aan de Mastodonservers van jouw volgers afgeleverd.</strong> Daarom wil je ze misschien controleren en desnoods volgers verwijderen die zich op een Mastodonserver bevinden die jij niet vertrouwd. Bijvoorbeeld omdat de beheerder(s) of de software van zo'n server jouw privacy niet respecteert.
+    explanation_html: Wanneer je de privacy van jouw toots wilt garanderen, moet je goed weten wie jouw volgers zijn. <strong>Posts die alleen aan jouw volgers zijn gericht, worden aan de Mastodonservers van jouw volgers afgeleverd.</strong> Daarom wil je ze misschien controleren en desnoods volgers verwijderen die zich op een Mastodonserver bevinden die jij niet vertrouwd. Bijvoorbeeld omdat de beheerder(s) of de software van zo'n server jouw privacy niet respecteert.
     followers_count: Aantal volgers
     lock_link: Maak jouw account besloten
     purge: Volgers verwijderen

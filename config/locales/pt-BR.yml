@@ -44,8 +44,8 @@ pt-BR:
     nothing_here: Não há nada aqui!
     people_followed_by: Pessoas que %{name} segue
     people_who_follow: Pessoas que seguem %{name}
-    posts: Toots
-    posts_with_replies: Toots e respostas
+    posts: Posts
+    posts_with_replies: Posts e respostas
     remote_follow: Siga remotamente
     reserved_username: Este usuário está reservado
     roles:
@@ -700,8 +700,8 @@ pt-BR:
     over_character_limit: limite de caracteres de %{max} excedido
     pin_errors:
       limit: Você já fixou a quantidade máxima de toots
-      ownership: Toots de outras pessoas não podem ser fixados
-      private: Toot não-público não pode ser fixado
+      ownership: Posts de outras pessoas não podem ser fixados
+      private: Post não-público não pode ser fixado
       reblog: Um compartilhamento não pode ser fixado
     show_more: Mostrar mais
     title: '%{name}: "%{quote}"'
@@ -714,7 +714,7 @@ pt-BR:
       unlisted_long: Todos podem ver, porém não será postado nas timelines públicas
   stream_entries:
     click_to_show: Clique para mostrar
-    pinned: Toot fixado
+    pinned: Post fixado
     reblogged: compartilhou
     sensitive_content: Conteúdo sensível
   terms:

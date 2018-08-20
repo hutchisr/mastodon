@@ -45,7 +45,7 @@ da:
     people_followed_by: Folk some %{name} følger
     people_who_follow: Folk der følger %{name}
     posts: Dyt
-    posts_with_replies: Toots og svar
+    posts_with_replies: Posts og svar
     remote_follow: Følg fra andre instancer
     reserved_username: Brugernavnet er reserveret
     roles:

@@ -45,7 +45,7 @@ gl:
     people_followed_by: Personas que segue %{name}
     people_who_follow: Personas que seguen a %{name}
     posts: Mensaxes
-    posts_with_replies: Toots e respostas
+    posts_with_replies: Posts e respostas
     remote_follow: Seguimento remoto
     reserved_username: O nome de usuaria está reservado
     roles:

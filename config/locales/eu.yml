@@ -44,8 +44,8 @@ eu:
     nothing_here: Ez dago ezer hemen!
     people_followed_by: "%{name}(e)k jarraitzen dituenak"
     people_who_follow: "%{name} jarraitzen dutenak"
-    posts: Toot-ak
-    posts_with_replies: Toot eta erantzunak
+    posts: Post-ak
+    posts_with_replies: Post eta erantzunak
     remote_follow: Jarraitu urrunetik
     reserved_username: Erabiltzaile-izena erreserbatuta dago
     roles:
