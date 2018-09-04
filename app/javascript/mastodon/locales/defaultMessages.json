@@ -407,11 +407,11 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "Toots",
+        "defaultMessage": "Posts",
         "id": "account.posts"
       },
       {
-        "defaultMessage": "Toots and replies",
+        "defaultMessage": "Posts and replies",
         "id": "account.posts_with_replies"
       },
       {
@@ -574,7 +574,7 @@
         "id": "account.view_full_profile"
       },
       {
-        "defaultMessage": "Toots",
+        "defaultMessage": "Posts",
         "id": "account.posts"
       },
       {
@@ -724,7 +724,7 @@
         "id": "compose_form.spoiler_placeholder"
       },
       {
-        "defaultMessage": "Toot",
+        "defaultMessage": "Post",
         "id": "compose_form.publish"
       },
       {
@@ -861,7 +861,7 @@
         "id": "search_results.accounts"
       },
       {
-        "defaultMessage": "Toots",
+        "defaultMessage": "Posts",
         "id": "search_results.statuses"
       },
       {

@@ -57,10 +57,10 @@ cs:
     pin_errors:
       following: Musíte již sledovat osobu, kterou chcete podpořit
     posts:
-      one: Toot
-      other: Tooty
-    posts_tab_heading: Tooty
-    posts_with_replies: Tooty a odpovědi
+      one: Post
+      other: Posty
+    posts_tab_heading: Posty
+    posts_with_replies: Posty a odpovědi
     reserved_username: Toto uživatelské jméno je rezervováno
     roles:
       admin: Administrátor

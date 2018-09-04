@@ -57,10 +57,10 @@ eu:
     pin_errors:
       following: Onetsi nahi duzun pertsona aurretik jarraitu behar duzu
     posts:
-      one: Toot
-      other: Toot
-    posts_tab_heading: Tootak
-    posts_with_replies: Toot eta erantzunak
+      one: Post
+      other: Post
+    posts_tab_heading: Postak
+    posts_with_replies: Post eta erantzunak
     reserved_username: Erabiltzaile-izena erreserbatuta dago
     roles:
       admin: Administratzailea

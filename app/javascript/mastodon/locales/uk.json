@@ -273,7 +273,7 @@
   "search_popout.tips.user": "user",
   "search_results.accounts": "People",
   "search_results.hashtags": "Hashtags",
-  "search_results.statuses": "Toots",
+  "search_results.statuses": "Posts",
   "search_results.total": "{count, number} {count, plural, one {результат} few {результати} many {результатів} other {результатів}}",
   "standalone.public_title": "A look inside...",
   "status.block": "Block @{name}",

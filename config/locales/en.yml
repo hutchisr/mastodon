@@ -57,10 +57,10 @@ en:
     pin_errors:
       following: You must be already following the person you want to endorse
     posts:
-      one: Toot
-      other: Toots
-    posts_tab_heading: Toots
-    posts_with_replies: Toots and replies
+      one: Post
+      other: Posts
+    posts_tab_heading: Posts
+    posts_with_replies: Posts and replies
     reserved_username: The username is reserved
     roles:
       admin: Admin

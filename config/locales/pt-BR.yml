@@ -57,10 +57,10 @@ pt-BR:
     pin_errors:
       following: Você tem que estar seguindo a pessoa que você quer sugerir
     posts:
-      one: Toot
-      other: Toots
-    posts_tab_heading: Toots
-    posts_with_replies: Toots e respostas
+      one: Post
+      other: Posts
+    posts_tab_heading: Posts
+    posts_with_replies: Posts e respostas
     reserved_username: Este usuário está reservado
     roles:
       admin: Administrador
@@ -762,8 +762,8 @@ pt-BR:
     over_character_limit: limite de caracteres de %{max} excedido
     pin_errors:
       limit: Você já fixou a quantidade máxima de toots
-      ownership: Toots de outras pessoas não podem ser fixados
-      private: Toot não-público não pode ser fixado
+      ownership: Posts de outras pessoas não podem ser fixados
+      private: Post não-público não pode ser fixado
       reblog: Um compartilhamento não pode ser fixado
     show_more: Mostrar mais
     sign_in_to_participate: Entre para participar dessa conversa
@@ -776,7 +776,7 @@ pt-BR:
       unlisted: Não listado
       unlisted_long: Todos podem ver, porém não será postado nas timelines públicas
   stream_entries:
-    pinned: Toot fixado
+    pinned: Post fixado
     reblogged: compartilhou
     sensitive_content: Conteúdo sensível
   terms:

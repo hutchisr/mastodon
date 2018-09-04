@@ -57,10 +57,10 @@ gl:
     pin_errors:
       following: Debe seguir a persoa que intenta recomendar
     posts:
-      one: Toot
-      other: Toots
-    posts_tab_heading: Toots
-    posts_with_replies: Toots e respostas
+      one: Post
+      other: Posts
+    posts_tab_heading: Posts
+    posts_with_replies: Posts e respostas
     reserved_username: O nome de usuaria está reservado
     roles:
       admin: Admin

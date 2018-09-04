@@ -51,7 +51,7 @@ it:
     pin_errors:
       following: Devi gia seguire la persona che vuoi promuovere
     posts: Posts
-    posts_with_replies: Toot e risposte
+    posts_with_replies: Post e risposte
     reserved_username: Il nome utente è gia stato preso
     roles:
       admin: Amministratore
@@ -636,7 +636,7 @@ it:
       unlisted: Pubblico, ma non visibile sulla timeline pubblica
       unlisted_long: Tutti lo possono vedere, ma non compare nelle timeline pubbliche
   stream_entries:
-    pinned: Toot fissato in cima
+    pinned: Post fissato in cima
     reblogged: condiviso
     sensitive_content: Materiale sensibile
   terms:

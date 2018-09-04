@@ -273,7 +273,7 @@
   "search_popout.tips.user": "bruger",
   "search_results.accounts": "Folk",
   "search_results.hashtags": "Emnetags",
-  "search_results.statuses": "Toote",
+  "search_results.statuses": "Poste",
   "search_results.total": "{count, number} {count, plural, et {result} andre {results}}",
   "standalone.public_title": "Et kig indenfor...",
   "status.block": "Bloker @{name}",

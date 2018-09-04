@@ -70,7 +70,7 @@
   "compose_form.lock_disclaimer": "U vostru contu ùn hè micca {locked}. Tuttu u mondu pò seguitavi è vede i vostri statuti privati.",
   "compose_form.lock_disclaimer.lock": "privatu",
   "compose_form.placeholder": "À chè pensate?",
-  "compose_form.publish": "Toot",
+  "compose_form.publish": "Post",
   "compose_form.publish_loud": "{publish}!",
   "compose_form.sensitive.marked": "Media indicatu cum'è sensibile",
   "compose_form.sensitive.unmarked": "Media micca indicatu cum'è sensibile",

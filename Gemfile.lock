@@ -346,11 +346,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
-<<<<<<< HEAD
-    nio4r (2.3.0)
-=======
     nio4r (2.3.1)
->>>>>>> v2.5.0
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     nokogumbo (1.5.0)
@@ -674,11 +670,7 @@ DEPENDENCIES
   devise (~> 4.4)
   devise-two-factor (~> 3.0)
   devise_pam_authenticatable2 (~> 9.1)
-<<<<<<< HEAD
-  doorkeeper (~> 4.4)
-=======
   doorkeeper (~> 5.0)
->>>>>>> v2.5.0
   dotenv-rails (~> 2.2, < 2.3)
   fabrication (~> 2.20)
   faker (~> 1.8)
