@@ -41,7 +41,7 @@ services:
     image: homulilly/mastodon:ruby2.5.1
     restart: always
     env_file: .env.production
-    command: bundle exec sidekiq -q default -q mailers -q pull -q push -c 10
+    command: bundle exec sidekiq -q default -q push -q mailers -q pull -c 10
     depends_on:
       - db
       - redis
