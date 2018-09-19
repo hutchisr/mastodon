@@ -15,7 +15,7 @@ services:
     image: homulilly/mastodon:ruby2.5.1
     restart: always
     env_file: .env.production
-    command: bash -c "rm -f /mastodon/tmp/pids/server.pid; bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "rm -f /mastodon/tmp/pids/server.pid; rails s -p 3000 -b '0.0.0.0'"
     expose:
       - 3000
     depends_on:
@@ -39,7 +39,7 @@ services:
     image: homulilly/mastodon:ruby2.5.1
     restart: always
     env_file: .env.production
-    command: bundle exec sidekiq -q default -q push -q mailers -q pull -c 10
+    command: sidekiq -q default -q push -q mailers -q pull -c 10
     depends_on:
       - db
       - redis
@@ -71,6 +71,12 @@ services:
     command: gateway b2
     expose:
       - 9000
+  tor:
+    image: homulilly/tor-privoxy:latest
+    restart: always
+    expose:
+      - 8118
+      - 9050
 volumes:
   system:
   db:
