@@ -56,6 +56,7 @@ services:
       - /etc/letsencrypt/:/etc/letsencrypt/:ro
       - ./public:/web/public/:ro
       - system:/web/system/:ro
+      - socket:/var/tmp/tor/
   netdata:
     image: firehol/netdata
     restart: always
@@ -74,10 +75,12 @@ services:
   tor:
     image: homulilly/tor-privoxy:latest
     restart: always
-    expose:
-      - 8118
-      - 9050
+    volumes:
+      - tor:/data
+      - socket:/socket
 volumes:
   system:
   db:
   redis:
+  tor:
+  socket:
