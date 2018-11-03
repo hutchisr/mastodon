@@ -65,13 +65,6 @@ services:
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
-  minio:
-    image: minio/minio
-    restart: always
-    env_file: .env.production
-    command: gateway b2
-    expose:
-      - 9000
   tor:
     image: homulilly/tor-privoxy:latest
     restart: always
