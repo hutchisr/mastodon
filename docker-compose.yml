@@ -47,7 +47,7 @@ services:
       - system:/mastodon/public/system
   nginx:
     restart: always
-    image: nginx:mainline
+    image: nginx:mainline-alpine
     ports:
       - 80:80
       - 443:443
