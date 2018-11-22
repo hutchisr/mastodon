@@ -25,7 +25,7 @@ services:
       - system:/mastodon/public/system
   streaming:
     build: .
-    image: homulilly/mastodon:ruby2.5.1
+    image: homulilly/mastodon:ruby2.5.3
     restart: always
     env_file: .env.production
     command: yarn start
@@ -36,7 +36,7 @@ services:
       - redis
   sidekiq:
     build: .
-    image: homulilly/mastodon:ruby2.5.1
+    image: homulilly/mastodon:ruby2.5.3
     restart: always
     env_file: .env.production
     command: sidekiq -q default -q push -q mailers -q pull -c 10
@@ -52,9 +52,9 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - /etc/nginx/:/etc/nginx/:ro
-      - /etc/letsencrypt/:/etc/letsencrypt/:ro
+      - ./nginx/social:/etc/nginx/sites-enabled/social:ro
       - ./public:/web/public/:ro
+      - certs:/etc/letsencrypt/:ro
       - system:/web/system/:ro
       - socket:/var/tmp/tor/
   netdata:
@@ -77,3 +77,4 @@ volumes:
   redis:
   tor:
   socket:
+  certs:
