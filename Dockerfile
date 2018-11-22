@@ -1,4 +1,4 @@
-FROM homulilly/ruby:2.5.1
+FROM homulilly/ruby:2.5.3
 
 LABEL maintainer="https://github.com/rainyday/mastodon" \
       description="Your self-hosted, globally interconnected microblogging community"
