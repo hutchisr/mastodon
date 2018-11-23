@@ -72,6 +72,13 @@ services:
     volumes:
       - tor:/data
       - socket:/socket
+  acme.sh:
+    image: neilpang/acme.sh
+    restart: always
+    volumes:
+      - ./public:/www/
+      - acme.sh:/acme.sh/
+      - certs:/certs/
 volumes:
   system:
   db:
@@ -79,4 +86,5 @@ volumes:
   tor:
   socket:
   certs:
+  acme.sh:
   netdata:

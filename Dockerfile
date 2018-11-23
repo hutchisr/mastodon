@@ -64,7 +64,7 @@ RUN apt-get update \
  && cd /mastodon \
  && rm -rf /tmp/* /var/lib/apt/lists/*
 
-ENV TINI_VERSION v0.17.0
+ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /sbin/tini
 RUN chmod +x /sbin/tini
 
