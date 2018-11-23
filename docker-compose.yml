@@ -72,14 +72,6 @@ services:
     volumes:
       - tor:/data
       - socket:/socket
-  acme.sh:
-    image: neilpang/acme.sh
-    restart: always
-    volumes:
-      - ./public:/www/
-      - acme.sh:/acme.sh/
-      - certs:/certs/
-    command: daemon
 volumes:
   system:
   db:
