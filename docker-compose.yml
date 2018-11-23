@@ -79,6 +79,7 @@ services:
       - ./public:/www/
       - acme.sh:/acme.sh/
       - certs:/certs/
+    command: daemon
 volumes:
   system:
   db:
