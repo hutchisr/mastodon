@@ -473,6 +473,8 @@ GEM
       link_header (~> 0.0, >= 0.0.8)
     rdf-normalize (0.3.3)
       rdf (>= 2.2, < 4.0)
+    recaptcha (4.13.0)
+      json
     redis (4.0.2)
     redis-actionpack (5.0.2)
       actionpack (>= 4.0, < 6)
@@ -735,6 +737,7 @@ DEPENDENCIES
   rails-i18n (~> 5.1)
   rails-settings-cached (~> 0.6)
   rdf-normalize (~> 0.3)
+  recaptcha (~> 4.13)
   redis (~> 4.0)
   redis-namespace (~> 1.5)
   redis-rails (~> 5.0)
@@ -769,4 +772,4 @@ RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   1.16.6
+   1.17.1

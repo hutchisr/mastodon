@@ -9,6 +9,7 @@ class Auth::RegistrationsController < Devise::RegistrationsController
   before_action :set_sessions, only: [:edit, :update]
   before_action :set_instance_presenter, only: [:new, :create, :update]
   before_action :set_body_classes, only: [:new, :create, :edit, :update]
+  prepend_before_action :check_captcha, only: [:create]
 
   def destroy
     not_found
@@ -94,5 +95,14 @@ class Auth::RegistrationsController < Devise::RegistrationsController
 
   def set_sessions
     @sessions = current_user.session_activations
+  end
+
+  def check_captcha
+    unless verify_recaptcha
+      self.resource = resource_class.new sign_up_params
+      resource.validate # Look for any other validation errors besides Recaptcha
+      set_minimum_password_length
+      respond_with resource
+    end 
   end
 end
