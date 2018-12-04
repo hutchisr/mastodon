@@ -74,6 +74,7 @@ class User < ApplicationRecord
   validates :locale, inclusion: I18n.available_locales.map(&:to_s), if: :locale?
   validates_with BlacklistedEmailValidator, if: :email_changed?
   validates_with EmailMxValidator, if: :email_changed?
+  validates :anti_spam, numericality: { equal_to: 4 }, :on => :create
 
   scope :recent, -> { order(id: :desc) }
   scope :admins, -> { where(admin: true) }
@@ -99,6 +100,7 @@ class User < ApplicationRecord
            :expand_spoilers, :default_language, to: :settings, prefix: :setting, allow_nil: false
 
   attr_reader :invite_code
+  attr_accessor :anti_spam
 
   def pam_conflict(_)
     # block pam login tries on traditional account
