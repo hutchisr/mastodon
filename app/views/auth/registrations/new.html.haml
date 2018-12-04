@@ -25,9 +25,6 @@
     = f.input :password_confirmation, wrapper: :with_label, label: t('simple_form.labels.defaults.confirm_password'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.confirm_password'), :autocomplete => 'off' }
 
   = f.input :invite_code, as: :hidden
-  
-  .fields-group
-    = recaptcha_tags
 
   %p.hint= t('auth.agreement_html', rules_path: about_more_path, terms_path: terms_path)
 
