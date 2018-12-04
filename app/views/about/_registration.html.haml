@@ -6,8 +6,6 @@
   = f.input :password, placeholder: t('simple_form.labels.defaults.password'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.password'), :autocomplete => 'off' }, hint: false
   = f.input :password_confirmation, placeholder: t('simple_form.labels.defaults.confirm_password'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.confirm_password'), :autocomplete => 'off' }, hint: false
 
-  = recaptcha_tags
-
   .actions
     = f.button :button, t('auth.register'), type: :submit, class: 'button button-primary'
 
