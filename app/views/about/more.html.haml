@@ -46,7 +46,7 @@
     .box-widget
       .rich-formatting= @instance_presenter.site_extended_description.html_safe.presence || t('about.extended_description_html')
       .domain-blocks
-        %h1 Domain Blocks
+        %h1= t('admin.domain_blocks.title')
         %ul
           - @instance_presenter.domain_blocks.each do |domain_block|
             %li
