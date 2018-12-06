@@ -45,3 +45,10 @@
   .column-3
     .box-widget
       .rich-formatting= @instance_presenter.site_extended_description.html_safe.presence || t('about.extended_description_html')
+      .domain-blocks
+        %h1 Domain Blocks
+        %ul
+          - @instance_presenter.domain_blocks.each do |domain_block|
+            %li
+              %a(href="https://#{domain_block.domain}")= "#{domain_block.domain}"
+              = "- #{domain_block.severity == 'noop' ? 'visible' : domain_block.severity}#{domain_block.reject_media ? ', reject media' : ''}"

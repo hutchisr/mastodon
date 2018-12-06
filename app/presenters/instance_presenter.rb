@@ -48,4 +48,8 @@ class InstancePresenter
   def mascot
     @mascot ||= Rails.cache.fetch('site_uploads/mascot') { SiteUpload.find_by(var: 'mascot') }
   end
+
+  def domain_blocks
+    Rails.cache.fetch('domain_blocks') { DomainBlock.all }
+  end
 end

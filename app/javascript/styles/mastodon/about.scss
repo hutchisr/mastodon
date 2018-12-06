@@ -15,6 +15,26 @@ $small-breakpoint: 960px;
   }
 }
 
+.domain-blocks {
+  font-family: $font-sans-serif, sans-serif;
+  font-size: 16px;
+  color: $darker-text-color;
+  padding-right: 10px;
+  margin-top: 12px;
+
+  h1 {
+    font-family: $font-display, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  a {
+    color: $highlight-text-color;
+    text-decoration: underline;
+  }
+}
+
 .rich-formatting {
   font-family: $font-sans-serif, sans-serif;
   font-size: 16px;
