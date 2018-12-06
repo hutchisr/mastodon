@@ -49,6 +49,10 @@
         %h1= t('admin.domain_blocks.title')
         %ul
           - @instance_presenter.domain_blocks.each do |domain_block|
-            %li
+            %li<
               %a(href="https://#{domain_block.domain}")= "#{domain_block.domain}"
-              = "- #{domain_block.severity == 'noop' ? 'visible' : domain_block.severity}#{domain_block.reject_media ? ', reject media' : ''}"
+              \-
+              - unless domain_block.severity == 'noop'
+                = t("admin.domain_blocks.severities.#{domain_block.severity}")
+                = domain_block.reject_media ? ', ' : ''
+              = domain_block.reject_media ? t('admin.domain_blocks.reject_media') : ''
