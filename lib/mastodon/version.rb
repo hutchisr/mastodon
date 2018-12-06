@@ -24,16 +24,20 @@ module Mastodon
       ''
     end
 
+    def meta
+      'homu'
+    end
+
     def to_a
       [major, minor, patch, pre].compact
     end
 
     def to_s
-      [to_a.join('.'), flags].join
+      [[to_a.join('.'), flags].join, meta].compact.join('+')
     end
 
     def repository
-      'tootsuite/mastodon'
+      'rainyday/mastodon'
     end
 
     def source_base_url
