@@ -70,7 +70,7 @@ RUN chmod +x /sbin/tini
 
 COPY Gemfile Gemfile.lock package.json yarn.lock .yarnclean /mastodon/
 
-RUN bundle config build.nokogiri --with-iconv-lib=/usr/local/lib --with-iconv-include=/usr/local/include \
+RUN bundle config build.nokogiri --use-system-libraries --with-iconv-lib=/usr/local/lib --with-iconv-include=/usr/local/include \
  && bundle install -j$(getconf _NPROCESSORS_ONLN) --deployment --without test development \
  && yarn --pure-lockfile \
  && yarn cache clean
