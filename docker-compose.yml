@@ -57,15 +57,6 @@ services:
       - certs:/etc/letsencrypt/:ro
       - system:/web/system/:ro
       - socket:/var/tmp/tor/
-  netdata:
-    image: netdata/netdata
-    restart: always
-    expose:
-      - 19999
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - netdata:/etc/netdata
   tor:
     image: homulilly/tor-privoxy:latest
     restart: always
