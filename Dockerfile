@@ -1,4 +1,4 @@
-FROM homulilly/ruby:2.5.3
+FROM homulilly/ruby:2.6.1
 
 LABEL maintainer="https://github.com/rainyday/mastodon" \
       description="Your self-hosted, globally interconnected microblogging community"
@@ -11,8 +11,8 @@ ENV PATH=/mastodon/bin:$PATH \
     RAILS_ENV=production \
     NODE_ENV=production
 
-ARG YARN_VERSION=1.3.2
-ARG YARN_DOWNLOAD_SHA256=6cfe82e530ef0837212f13e45c1565ba53f5199eec2527b85ecbcd88bf26821d
+ARG YARN_VERSION=1.13.0
+ARG YARN_DOWNLOAD_SHA256=125d40ebf621ebb08e3f66a618bd2cc5cd77fa317a312900a1ab4360ed38bf14
 ARG LIBICONV_VERSION=1.15
 ARG LIBICONV_DOWNLOAD_SHA256=ccf536620a45458d26ba83887a983b96827001e92a13847b45e4925cc8913178
 
