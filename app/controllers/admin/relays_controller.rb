@@ -11,7 +11,7 @@ module Admin
 
     def new
       authorize :relay, :update?
-      @relay = Relay.new
+      @relay = Relay.new(inbox_url: Relay::PRESET_RELAY)
     end
 
     def create

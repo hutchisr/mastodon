@@ -483,7 +483,8 @@ All notable changes to this project will be documented in this file.
 
 - Fix XSS vulnerability ([Gargron](https://github.com/tootsuite/mastodon/pull/8959))
 
-## 2.5.1
+## [2.5.1] - 2018-10-07
+### Fixed
 
 - Fix database migrations for PostgreSQL below 9.5 ([Gargron](https://github.com/tootsuite/mastodon/pull/8903))
 - Fix class autoloading issue in ActivityPub Create handler ([Gargron](https://github.com/tootsuite/mastodon/pull/8820))
