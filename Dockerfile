@@ -4,11 +4,11 @@ FROM ubuntu:18.04 as build-dep
 SHELL ["bash", "-c"]
 
 # Install Node
-ENV NODE_VER="8.15.0"
+ENV NODE_VER="10.15.3"
 RUN	echo "Etc/UTC" > /etc/localtime && \
-	apt update && \
-	apt -y dist-upgrade && \
-	apt -y install wget make gcc g++ python && \
+	apt-get update && \
+	apt-get -y dist-upgrade && \
+	apt-get -y install wget make gcc g++ python && \
 	cd ~ && \
 	wget https://nodejs.org/download/release/v$NODE_VER/node-v$NODE_VER.tar.gz && \
 	tar xf node-v$NODE_VER.tar.gz && \
@@ -18,9 +18,9 @@ RUN	echo "Etc/UTC" > /etc/localtime && \
 	make install
 
 # Install jemalloc
-ENV JE_VER="5.1.0"
-RUN apt update && \
-	apt -y install autoconf && \
+ENV JE_VER="5.2.0"
+RUN apt-get update && \
+	apt-get -y install autoconf && \
 	cd ~ && \
 	wget https://github.com/jemalloc/jemalloc/archive/$JE_VER.tar.gz && \
 	tar xf $JE_VER.tar.gz && \
@@ -31,11 +31,11 @@ RUN apt update && \
 	make install_bin install_include install_lib
 
 # Install ruby
-ENV RUBY_VER="2.6.1"
+ENV RUBY_VER="2.6.3"
 ENV CPPFLAGS="-I/opt/jemalloc/include"
 ENV LDFLAGS="-L/opt/jemalloc/lib/"
-RUN apt update && \
-	apt -y install build-essential \
+RUN apt-get update && \
+	apt-get -y install build-essential \
 		bison libyaml-dev libgdbm-dev libreadline-dev \
 		libncurses5-dev libffi-dev zlib1g-dev libssl-dev && \
 	cd ~ && \
@@ -54,8 +54,8 @@ ENV PATH="${PATH}:/opt/ruby/bin:/opt/node/bin"
 
 RUN npm install -g yarn && \
 	gem install bundler && \
-	apt update && \
-	apt -y install git libicu-dev libidn11-dev \
+	apt-get update && \
+	apt-get -y install git libicu-dev libidn11-dev \
 	libpq-dev libprotobuf-dev protobuf-compiler
 
 COPY Gemfile* package.json yarn.lock /opt/mastodon/
@@ -77,21 +77,21 @@ ENV PATH="${PATH}:/opt/ruby/bin:/opt/node/bin:/opt/mastodon/bin"
 # Create the mastodon user
 ARG UID=991
 ARG GID=991
-RUN apt update && \
+RUN apt-get update && \
 	echo "Etc/UTC" > /etc/localtime && \
 	ln -s /opt/jemalloc/lib/* /usr/lib/ && \
-	apt -y dist-upgrade && \
-	apt install -y whois wget && \
+	apt-get -y dist-upgrade && \
+	apt-get install -y whois wget && \
 	addgroup --gid $GID mastodon && \
 	useradd -m -u $UID -g $GID -d /opt/mastodon mastodon && \
 	echo "mastodon:`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 24 | mkpasswd -s -m sha-256`" | chpasswd
 
 # Install masto runtime deps
-RUN apt -y --no-install-recommends install \
+RUN apt-get -y --no-install-recommends install \
 	  libssl1.1 libpq5 imagemagick ffmpeg \
 	  libicu60 libprotobuf10 libidn11 libyaml-0-2 \
 	  file ca-certificates tzdata libreadline7 && \
-	apt -y install gcc && \
+	apt-get -y install gcc && \
 	ln -s /opt/mastodon /mastodon && \
 	gem install bundler && \
 	rm -rf /var/cache && \
