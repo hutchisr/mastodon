@@ -46,6 +46,7 @@ services:
       - redis
     volumes:
       - system:/mastodon/public/system
+    cpus: 1.5
   nginx:
     restart: always
     image: nginx:mainline
