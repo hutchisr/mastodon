@@ -115,6 +115,10 @@ class User < ApplicationRecord
   end
 
   def invited?
+    invite_id.present?
+  end
+
+  def valid_invitation?
     invite_id.present? && invite.valid_for_use?
   end
 
@@ -275,7 +279,7 @@ class User < ApplicationRecord
   private
 
   def set_approved
-    self.approved = open_registrations? || invited? || external?
+    self.approved = open_registrations? || valid_invitation? || external?
   end
 
   def open_registrations?
