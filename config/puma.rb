@@ -1,6 +1,7 @@
-min_threads = ENV.fetch('MIN_THREADS') { 0 }.to_i
-max_threads = ENV.fetch('MAX_THREADS') { 8 }.to_i
-threads min_threads, max_threads
+persistent_timeout ENV.fetch('PERSISTENT_TIMEOUT') { 20 }.to_i
+
+threads_count = ENV.fetch('MAX_THREADS') { 5 }.to_i
+threads threads_count, threads_count
 
 if ENV['SOCKET']
   bind "unix://#{ENV['SOCKET']}"
