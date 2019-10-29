@@ -25,14 +25,9 @@
   "account.mute": "Silencia @{name}",
   "account.mute_notifications": "Notificacions desactivades de @{name}",
   "account.muted": "Silenciat",
-<<<<<<< HEAD
+  "account.never_active": "Mai",
   "account.posts": "Posts",
   "account.posts_with_replies": "Posts i respostes",
-=======
-  "account.never_active": "Mai",
-  "account.posts": "Toots",
-  "account.posts_with_replies": "Toots i respostes",
->>>>>>> v3.0.1
   "account.report": "Informe @{name}",
   "account.requested": "Esperant aprovació. Clic per a cancel·lar la petició de seguiment",
   "account.share": "Comparteix el perfil de @{name}",
