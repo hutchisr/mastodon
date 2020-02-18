@@ -13,7 +13,7 @@ services:
       - redis:/data
   web:
     build: .
-    image: homulilly/mastodon:ruby2.6.3z
+    image: homulilly/mastodon:ruby2.6.5
     restart: always
     env_file: .env.production
     command: bash -c "rm -f /mastodon/tmp/pids/server.pid; bundle exec rails s -p 3000"
@@ -28,7 +28,7 @@ services:
       - system:/mastodon/public/system
   streaming:
     build: .
-    image: homulilly/mastodon:ruby2.6.3
+    image: homulilly/mastodon:ruby2.6.5
     restart: always
     env_file: .env.production
     command: node ./streaming
@@ -41,7 +41,7 @@ services:
       - redis
   sidekiq:
     build: .
-    image: homulilly/mastodon:ruby2.6.3
+    image: homulilly/mastodon:ruby2.6.5
     restart: always
     env_file: .env.production
     command: bundle exec sidekiq
