@@ -114,7 +114,6 @@ class User < ApplicationRecord
            to: :settings, prefix: :setting, allow_nil: false
 
   attr_reader :invite_code
-  attr_accessor :anti_spam
   attr_writer :external
 
   def confirmed?

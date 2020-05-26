@@ -25,9 +25,6 @@
   .fields-group
     = f.input :password_confirmation, wrapper: :with_label, label: t('simple_form.labels.defaults.confirm_password'), required: true, input_html: { 'aria-label' => t('simple_form.labels.defaults.confirm_password'), :autocomplete => 'off' }
 
-  .fields-group
-    = f.input :anti_spam, wrapper: :with_label, label: '2 + 2 = ?', required: true, as: :numeric
-  
   - if approved_registrations? && !@invite.present?
     .fields-group
       = f.simple_fields_for :invite_request, resource.invite_request || resource.build_invite_request do |invite_request_fields|
