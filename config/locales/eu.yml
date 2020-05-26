@@ -1,7 +1,7 @@
 ---
 eu:
   about:
-    about_hashtag_html: Hauek  <strong>#%{hashtag}</strong> traola duten toot publikoak dira. Fedibertsoko edozein kontu baduzu harremanetan jarri zaitezke.
+    about_hashtag_html: Hauek  <strong>#%{hashtag}</strong> traola duten post publikoak dira. Fedibertsoko edozein kontu baduzu harremanetan jarri zaitezke.
     about_mastodon_html: Mastodon web protokolo ireki eta libreak darabiltzan gizarte sare bat da. E-mail sarea bezala deszentralizatua da.
     about_this: Honi buruz
     active_count_after: aktibo
@@ -72,8 +72,8 @@ eu:
     posts:
       one: Post
       other: Post
-    posts_tab_heading: Post-ak
-    posts_with_replies: Post-ak eta erantzunak
+    posts_tab_heading: Postak
+    posts_with_replies: Postak eta erantzunak
     reserved_username: Erabiltzaile-izena erreserbatuta dago
     roles:
       admin: Administratzailea
@@ -92,6 +92,7 @@ eu:
       delete: Ezabatu
       destroyed_msg: Moderazio ohara ongi suntsitu da!
     accounts:
+      add_email_domain_block: Sartu domeinua zerrenda beltzean
       approve: Onartu
       approve_all: Onartu denak
       are_you_sure: Ziur zaude?
@@ -172,6 +173,7 @@ eu:
         staff: Langilea
         user: Erabiltzailea
       search: Bilatu
+      search_same_email_domain: E-mail domeinu bera duten beste erabiltzailean
       search_same_ip: IP bera duten beste erabiltzaileak
       shared_inbox_url: Partekatutako sarrera ontziaren URL-a
       show:
@@ -358,6 +360,7 @@ eu:
       destroyed_msg: Ongi ezabatu da e-mail domeinua zerrenda beltzetik
       domain: Domeinua
       empty: Ez dago e-mail domeinurik zerrenda beltzean.
+      from_html: "%{domain} domeinutik"
       new:
         create: Gehitu domeinua
         title: Sarrera berria e-mail zerrenda beltzean
@@ -395,11 +398,11 @@ eu:
     relays:
       add_new: Gehitu hari errelea
       delete: Ezabatu
-      description_html: "<strong>Federazio errele</strong> bat zerbitzari tartekari bat da, bertara harpidetutako eta bertan argitaratzen duten zerbitzarien artean toot publiko kopuru handiak banatzen ditu. <strong>Zerbitzari txiki eta ertainei Fedibertsoko edukia aurkitzen laguntzen die</strong>, bestela erabiltzaile lokalek eskuz jarraitu beharko lituzkete urruneko zerbitzarietako erabiltzaileak."
+      description_html: "<strong>Federazio errele</strong> bat zerbitzari tartekari bat da, bertara harpidetutako eta bertan argitaratzen duten zerbitzarien artean post publiko kopuru handiak banatzen ditu. <strong>Zerbitzari txiki eta ertainei Fedibertsoko edukia aurkitzen laguntzen die</strong>, bestela erabiltzaile lokalek eskuz jarraitu beharko lituzkete urruneko zerbitzarietako erabiltzaileak."
       disable: Desgaitu
       disabled: Desgaituta
       enable: Gaitu
-      enable_hint: Behin gaituta, zure zerbitzaria errele honetako toot publiko guztietara harpidetuko da, eta zerbitzari honetako toot publikoak errelera bidaltzen hasiko da.
+      enable_hint: Behin gaituta, zure zerbitzaria errele honetako post publiko guztietara harpidetuko da, eta zerbitzari honetako post publikoak errelera bidaltzen hasiko da.
       enabled: Gaituta
       inbox_url: Errelearen URLa
       pending: Erreleak onartzearen zain
@@ -503,7 +506,7 @@ eu:
           open: Edonork eman dezake izena
         title: Erregistratzeko modua
       show_known_fediverse_at_about_page:
-        desc_html: Txandakatzean, fedibertso ezagun osoko toot-ak bistaratuko ditu aurrebistan. Bestela, toot lokalak besterik ez ditu erakutsiko.
+        desc_html: Txandakatzean, fedibertso ezagun osoko postak bistaratuko ditu aurrebistan. Bestela, post lokalak besterik ez ditu erakutsiko
         title: Erakutsi fedibertsu ezagun osoko denbora-lerroa aurrebistan
       show_staff_badge:
         desc_html: Erakutsi langile banda erabiltzailearen orrian
@@ -537,6 +540,9 @@ eu:
       trends:
         desc_html: Erakutsi publikoki orain joeran dauden aurretik errebisatutako traolak
         title: Traolak joeran
+    site_uploads:
+      delete: Ezabatu igotako fitxategia
+      destroyed_msg: Guneko igoera ongi ezabatu da!
     statuses:
       back_to_account: Atzera kontuaren orrira
       batch:
@@ -573,7 +579,6 @@ eu:
     warning_presets:
       add_new: Gehitu berria
       delete: Ezabatu
-      edit: Editatu
       edit_preset: Editatu abisu aurre-ezarpena
       title: Kudeatu abisu aurre-ezarpenak
   admin_mailer:
@@ -604,7 +609,7 @@ eu:
       guide_link: https://crowdin.com/project/mastodon
       guide_link_text: Edonork lagundu dezake.
     sensitive_content: Eduki hunkigarria
-    toot_layout: Toot disposizioa
+    toot_layout: Post disposizioa
   application_mailer:
     notification_preferences: Aldatu e-mail hobespenak
     salutation: "%{name},"
@@ -661,6 +666,7 @@ eu:
     trouble_logging_in: Arazoak saioa hasteko?
   authorize_follow:
     already_following: Kontu hau aurretik jarraitzen duzu
+    already_requested: Bidali duzu dagoeneko kontu hori jarraitzeko eskaera bat
     error: Zoritxarrez, urruneko kontua bilatzean errore bat gertatu da
     follow: Jarraitu
     follow_request: 'Jarraitzeko eskari bat bidali duzu hona:'
@@ -737,7 +743,7 @@ eu:
     archive_takeout:
       date: Data
       download: Deskargatu zure artxiboa
-      hint_html: Zure <strong>toot eta igotako multimedia</strong>ren artxibo bat eskatu dezakezu. Esportatutako datuak ActivityPub formatua izango dute, bateragarria den edozein programarekin irakurtzeko. Artxiboa 7 egunetan behin eska dezakezu.
+      hint_html: Zure <strong>post eta igotako multimedia</strong>ren artxibo bat eskatu dezakezu. Esportatutako datuak ActivityPub formatua izango dute, bateragarria den edozein programarekin irakurtzeko. Artxiboa 7 egunetan behin eska dezakezu.
       in_progress: Zure artxiboa biltzen...
       request: Eskatu zure artxiboa
       size: Tamaina
@@ -802,7 +808,7 @@ eu:
     i_am_html: "%{username} erabiltzailea naiz %{service} zerbitzuan."
     identity: Identitatea
     inactive: Ez aktiboa
-    publicize_checkbox: 'Eta bidali toot hau:'
+    publicize_checkbox: 'Eta bidali post hau:'
     publicize_toot: 'Frogatua dago! %{username} erabiltzailea naiz %{service} zerbitzuan: %{url}'
     status: Egiaztatze egoera
     view_proof: Ikusi froga
@@ -849,6 +855,7 @@ eu:
   media_attachments:
     validations:
       images_and_video: Ezin da irudiak dituen mezu batean bideo bat erantsi
+      not_ready: Ezin dira prozesatzen amaitu gabeko fitxategiak erantsi. Saiatu geroago!
       too_many: Ezin dira 4 fitxategi baino gehiago erantsi
   migrations:
     acct: Kontu berriaren erabiltzaile@domeinua
@@ -987,10 +994,10 @@ eu:
       prompt: 'Post honi bultzada eman nahi diozu:'
     reply:
       proceed: Ekin erantzuteari
-      prompt: 'Toot honi erantzun nahi diozu:'
+      prompt: 'Post honi erantzun nahi diozu:'
   scheduled_statuses:
-    over_daily_limit: Egun horretarako programatutako toot kopuruaren muga gainditu duzu (%{limit})
-    over_total_limit: Programatutako toot kopuruaren muga gainditu duzu (%{limit})
+    over_daily_limit: Egun horretarako programatutako post kopuruaren muga gainditu duzu (%{limit})
+    over_total_limit: Programatutako post kopuruaren muga gainditu duzu (%{limit})
     too_soon: Programatutako data etorkizunean egon behar du
   sessions:
     activity: Azken jarduera
@@ -1074,9 +1081,9 @@ eu:
     open_in_web: Ireki web-ean
     over_character_limit: "%{max}eko karaktere muga gaindituta"
     pin_errors:
-      limit: Gehienez finkatu daitekeen toot kopurua finkatu duzu jada
-      ownership: Ezin duzu beste norbaiten toot bat finkatu
-      private: Ezin dira publikoak ez diren toot-ak finkatu
+      limit: Gehienez finkatu daitekeen post kopurua finkatu duzu jada
+      ownership: Ezin duzu beste norbaiten post bat finkatu
+      private: Ezin dira publikoak ez diren postak finkatu
       reblog: Bultzada bat ezin da finkatu
     poll:
       total_people:
@@ -1098,7 +1105,7 @@ eu:
       unlisted: Zerrendatu gabea
       unlisted_long: Edonork ikusi dezake, baina ez da denbora-lerro publikoetan agertzen
   stream_entries:
-    pinned: Finkatutako toot-a
+    pinned: Finkatutako posta
     reblogged: "(r)en bultzada"
     sensitive_content: 'Kontuz: Eduki hunkigarria'
   tags:
@@ -1218,8 +1225,8 @@ eu:
     warning:
       explanation:
         disable: Zure kontua izoztuta dagoen bitartean, zure kontua bere horretan dirau, baina ezin duzu ekintzarik burutu desblokeatzen den arte.
-        silence: Zure kontua murriztua dagoen bitartean, jada zu jarraitzen zaituztenak besterik ez dituzte zure Toot-ak ikusiko zerbitzari honetan, eta agian zerrenda publikoetatik kenduko zaizu. Hala ere besteek oraindik zu jarraitu zaitzakete.
-        suspend: Zure kontua kanporatua izan da, zure toot guztiak eta multimedia fitxategiak behin betiko ezabatu dira zerbitzari honetatik, eta zure jarraitzaileen zerbitzarietatik.
+        silence: Zure kontua murriztua dagoen bitartean, jada zu jarraitzen zaituztenak besterik ez dituzte zure postak ikusiko zerbitzari honetan, eta agian zerrenda publikoetatik kenduko zaizu. Hala ere besteek oraindik zu jarraitu zaitzakete.
+        suspend: Zure kontua kanporatua izan da, zure post guztiak eta multimedia fitxategiak behin betiko ezabatu dira zerbitzari honetatik, eta zure jarraitzaileen zerbitzarietatik.
       get_in_touch: "%{instance} instantziako jendearekin harremanetan jartzeko e-mail honi erantzun ahal diozu."
       review_server_policies: Berrikusi zerbitzariko politikak
       statuses: 'Zehazki, honentzat:'
